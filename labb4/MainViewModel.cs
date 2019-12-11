@@ -25,7 +25,7 @@ namespace labb4
         public MainViewModel()
         {
             var countryRepo = new CountryRepository();
-            countries = countryRepo.GetCountries;
+            countries = countryRepo.GetCountries();
             index = 0;
             SelectedCountry = countries[index];
             CommandSetup();

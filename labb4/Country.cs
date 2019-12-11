@@ -1,5 +1,4 @@
-﻿using System;
-namespace labb4
+﻿namespace labb4
 {
     public class Country
     {
