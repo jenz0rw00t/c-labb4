@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:labb4="clr-namespace:labb4"
+    mc:Ignorable="d"
+    x:Class="labb4.MainPage"
+    Title="Country Facts">
+    <ContentPage.BindingContext>
+        <labb4:MainViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Previous"
+                     Order="Primary"
+                     Command="{Binding PrevCommand}"/>
+        <ToolbarItem Text="Next"
+                     Order="Primary"
+                     Command="{Binding NextCommand}"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="Start"
+                 Margin="20"
+                 Spacing="20">
+        <Image HeightRequest="150"
+               Aspect="AspectFit"
+               Source="{Binding SelectedCountry.PictureUrl}"
+               Margin="0, 0, 0, 50"/>
+        <Label Text="{Binding SelectedCountry.Name, StringFormat='Country: {0}'}"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+        <Label Text="{Binding SelectedCountry.Currency, StringFormat='Currency: {0}'}"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+        <Label Text="{Binding SelectedCountry.Population, StringFormat='Population: {0}'}"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+        <Label Text="{Binding SelectedCountry.Description}"/>
+    </StackLayout>
+</ContentPage>
